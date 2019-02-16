@@ -1,12 +1,13 @@
-# Apache Dockerfile
+#vi Dockerfile
 
-FROM centos:centos6
-MAINTAINER trishnag <trishnaguha17@gmail.com>
+FROM centos:latest
 
-RUN yum -y update; yum clean all
+MAINTAINER NewstarCorporation
+
 RUN yum -y install httpd
-RUN echo "This is our new Apache Test Site" >> /var/www/html/index.html
+
+COPY index.html /var/www/html/
+
+CMD [“/usr/sbin/httpd”, “-D”, “FOREGROUND”]
 
 EXPOSE 80
-
-RUN echo "/sbin/service httpd start" >> /root/.bashrc
