@@ -2,7 +2,7 @@
 
 FROM centos:latest
 
-MAINTAINER NewstarCorporation
+MAINTAINER rajcdlmec
 
 RUN yum -y install httpd
 
