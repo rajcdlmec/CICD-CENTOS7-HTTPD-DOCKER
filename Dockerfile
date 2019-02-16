@@ -1,14 +1,3 @@
-#Apache Dockerfile
-FROM centos:6
-
-MAINTAINER rajcdlmec
-
-RUN yum -y update; yum clean all
-RUN yum -y install httpd
-COPY index.html /var/www/html/
-
-EXPOSE 80
-
-RUN echo "/sbin/service httpd start" >> /root/.bashrc
-
+FROM httpd:2.4
+COPY index.html /usr/local/apache2/htdocs/
 
