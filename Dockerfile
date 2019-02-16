@@ -1,12 +1,12 @@
 #Apache Dockerfile
-FROM centos:latest
+FROM centos:7
 
 MAINTAINER rajcdlmec
 
-RUN yum -y install httpd
+RUN yum -y install httpd && service httpd start && systemctl enable httpd.service
 
 COPY index.html /var/www/html/
 
 EXPOSE 80
 
-CMD [“/usr/sbin/httpd”, “-D”, “FOREGROUND”]
+
