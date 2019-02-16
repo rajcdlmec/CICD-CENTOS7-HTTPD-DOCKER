@@ -1,5 +1,3 @@
-#vi Dockerfile
-
 FROM centos:latest
 
 MAINTAINER rajcdlmec
